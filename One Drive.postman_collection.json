@@ -1,0 +1,472 @@
+{
+	"info": {
+		"_postman_id": "f6440491-e4c1-4a6b-aee5-0b32a865d40c",
+		"name": "One Drive",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8010137"
+	},
+	"item": [
+		{
+			"name": "Permissions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{IP}}/permission/27471BF083D19D80!107",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"permission",
+						"27471BF083D19D80!107"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "Permission",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{IP}}/permission/27471BF083D17D80!107",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"permission",
+								"27471BF083D17D80!107"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68-8YGwUeoOxyHin4TuienFoAJsM2U\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jun 2024 12:44:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"liqLXxQIrDm9q1tYt6GLMJfYbgE\",\n        \"roles\": [\n            \"read\"\n        ],\n        \"grantedTo\": {\n            \"user\": {\n                \"id\": \"har23232@gmail.com\"\n            }\n        }\n    }\n]"
+				},
+				{
+					"name": "Not fount",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{IP}}/permission/27471BF083D19D80!107",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"permission",
+								"27471BF083D19D80!107"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44-PJ5hLhH5l1tBboio3VQ3xGplDM4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jun 2024 12:44:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"itemNotFound\",\n    \"message\": \"Item does not exist\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List Contents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{IP}}/list/root",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"list",
+						"root"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "List Contents",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{IP}}/list/root",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"list",
+								"root"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14302"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"37de-J9xQ5JQ1FCYHcTTpL/iCWSTSLW0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jun 2024 12:39:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"value\": [\n        {\n            \"createdDateTime\": \"2024-01-12T05:45:38.94Z\",\n            \"cTag\": \"adDoyNzQ3MUJGMDgzRDE3RDgwITI2ODguNjM4NDA2MzU0NTEyNDcwMDAw\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCEyNjg4LjA\",\n            \"id\": \"27471BF083D17D80!2688\",\n            \"lastModifiedDateTime\": \"2024-01-12T05:50:51.247Z\",\n            \"name\": \"Apps\",\n            \"size\": 243829,\n            \"webUrl\": \"https://1drv.ms/f/s!AIB90YPwG0cnlQA\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"application\": {\n                    \"displayName\": \"Designer\",\n                    \"id\": \"4c905718\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"application\": {\n                    \"displayName\": \"Designer\",\n                    \"id\": \"4c905718\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2024-01-12T05:45:38.94Z\",\n                \"lastModifiedDateTime\": \"2024-01-12T05:45:38.94Z\"\n            },\n            \"folder\": {\n                \"childCount\": 1,\n                \"view\": {\n                    \"viewType\": \"thumbnails\",\n                    \"sortBy\": \"name\",\n                    \"sortOrder\": \"ascending\"\n                }\n            },\n            \"specialFolder\": {\n                \"name\": \"apps\"\n            }\n        },\n        {\n            \"createdDateTime\": \"2022-04-17T12:18:27.117Z\",\n            \"cTag\": \"adDoyNzQ3MUJGMDgzRDE3RDgwITE0NjYuNjM3ODU3OTYzNzM1ODcwMDAw\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCExNDY2LjA\",\n            \"id\": \"27471BF083D17D80!1466\",\n            \"lastModifiedDateTime\": \"2022-04-17T12:46:13.587Z\",\n            \"name\": \"Desktop\",\n            \"size\": 1402,\n            \"webUrl\": \"https://1drv.ms/f/s!AIB90YPwG0cnizo\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"application\": {\n                    \"displayName\": \"MSOffice15\",\n                    \"id\": \"480728c5\"\n                },\n                \"device\": {\n                    \"id\": \"18400796e4a693\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"application\": {\n                    \"displayName\": \"MSOffice15\",\n                    \"id\": \"480728c5\"\n                },\n                \"device\": {\n                    \"id\": \"18400796e4a693\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2022-04-17T12:18:27.116Z\",\n                \"lastModifiedDateTime\": \"2022-04-17T12:18:27.116Z\"\n            },\n            \"folder\": {\n                \"childCount\": 1,\n                \"view\": {\n                    \"viewType\": \"thumbnails\",\n                    \"sortBy\": \"name\",\n                    \"sortOrder\": \"ascending\"\n                }\n            },\n            \"specialFolder\": {\n                \"name\": \"desktop\"\n            }\n        },\n        {\n            \"createdDateTime\": \"2016-09-03T06:39:35.09Z\",\n            \"cTag\": \"adDoyNzQ3MUJGMDgzRDE3RDgwITEwNS42Mzg0OTI2NDM3NzYyMzAwMDA\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCExMDUuMA\",\n            \"id\": \"27471BF083D17D80!105\",\n            \"lastModifiedDateTime\": \"2024-04-21T02:46:17.623Z\",\n            \"name\": \"Documents\",\n            \"size\": 35434608,\n            \"webUrl\": \"https://1drv.ms/f/s!AIB90YPwG0cnaQ\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"device\": {\n                    \"id\": \"18bffed993a32c\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"device\": {\n                    \"id\": \"18bffed993a32c\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2016-09-03T06:39:35.09Z\",\n                \"lastModifiedDateTime\": \"2016-09-03T06:39:35.09Z\"\n            },\n            \"folder\": {\n                \"childCount\": 14,\n                \"view\": {\n                    \"viewType\": \"thumbnails\",\n                    \"sortBy\": \"name\",\n                    \"sortOrder\": \"ascending\"\n                }\n            },\n            \"specialFolder\": {\n                \"name\": \"documents\"\n            }\n        },\n        {\n            \"createdDateTime\": \"2017-02-24T11:38:56.127Z\",\n            \"cTag\": \"adDoyNzQ3MUJGMDgzRDE3RDgwITQyNS42MzYyMzUzMzEzNjEyNzAwMDA\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCE0MjUuMA\",\n            \"id\": \"27471BF083D17D80!425\",\n            \"lastModifiedDateTime\": \"2017-02-24T11:38:56.127Z\",\n            \"name\": \"Email attachments\",\n            \"size\": 0,\n            \"webUrl\": \"https://1drv.ms/f/s!AIB90YPwG0cngyk\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2017-02-24T11:38:56.126Z\",\n                \"lastModifiedDateTime\": \"2017-02-24T11:38:56.126Z\"\n            },\n            \"folder\": {\n                \"childCount\": 0,\n                \"view\": {\n                    \"viewType\": \"thumbnails\",\n                    \"sortBy\": \"name\",\n                    \"sortOrder\": \"ascending\"\n                }\n            },\n            \"specialFolder\": {\n                \"name\": \"attachments\"\n            }\n        },\n        {\n            \"createdDateTime\": \"2022-04-17T12:18:27.65Z\",\n            \"cTag\": \"adDoyNzQ3MUJGMDgzRDE3RDgwITE0NjcuNjM3ODU3OTQ3MTY2NzAwMDAw\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCExNDY3LjA\",\n            \"id\": \"27471BF083D17D80!1467\",\n            \"lastModifiedDateTime\": \"2022-04-17T12:18:36.67Z\",\n            \"name\": \"Pictures\",\n            \"size\": 0,\n            \"webUrl\": \"https://1drv.ms/f/s!AIB90YPwG0cnizs\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"application\": {\n                    \"displayName\": \"MSOffice15\",\n                    \"id\": \"480728c5\"\n                },\n                \"device\": {\n                    \"id\": \"18400796e4a693\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"application\": {\n                    \"displayName\": \"MSOffice15\",\n                    \"id\": \"480728c5\"\n                },\n                \"device\": {\n                    \"id\": \"18400796e4a693\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2022-04-17T12:18:27.65Z\",\n                \"lastModifiedDateTime\": \"2022-04-17T12:18:27.65Z\"\n            },\n            \"folder\": {\n                \"childCount\": 3,\n                \"view\": {\n                    \"viewType\": \"thumbnails\",\n                    \"sortBy\": \"takenOrCreatedDateTime\",\n                    \"sortOrder\": \"ascending\"\n                }\n            },\n            \"specialFolder\": {\n                \"name\": \"photos\"\n            }\n        },\n        {\n            \"@microsoft.graph.downloadUrl\": \"https://n3ssmw.bl.files.1drv.com/y4m-qWV3yIddaxy1K9JPZXidoiB4edtStdXLZCOiQRfwf7VmAM7FtDdWY_wlQTKAW3EFsV_m8Gt34tGU9VP5xaPCr7MDtMWPWxmiUnr_yxiMbj5bZgTqoM2lf4Z0rubkhKjgc8vxi5TNHQQgqXY0xlQARWPKADYJy5HI8YumojwtciEBZREfClFptwm8Gyj_ZhP\",\n            \"createdDateTime\": \"2016-10-13T13:27:28.593Z\",\n            \"cTag\": \"aYzoyNzQ3MUJGMDgzRDE3RDgwITE3MS4zMTI\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCExNzEuNw\",\n            \"id\": \"27471BF083D17D80!171\",\n            \"lastModifiedDateTime\": \"2016-10-13T13:48:11.41Z\",\n            \"name\": \"2.docx\",\n            \"size\": 621721,\n            \"webUrl\": \"https://1drv.ms/w/s!AIB90YPwG0cngSs\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"file\": {\n                \"mimeType\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\",\n                \"hashes\": {\n                    \"crc32Hash\": \"AF3057DA\",\n                    \"quickXorHash\": \"jK4pRLGwmUliXoEGTp5ignFy59c=\",\n                    \"sha1Hash\": \"887DDA559278A318D79F08D723786DDCD7984B2F\"\n                }\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2016-10-13T13:27:28.593Z\",\n                \"lastModifiedDateTime\": \"2016-10-13T13:27:28.593Z\"\n            }\n        },\n        {\n            \"@microsoft.graph.downloadUrl\": \"https://ntg9iw.bl.files.1drv.com/y4mTqP3KH1VdVhAeYavGk2948WTz3-C1HiFIwu8BB4A_LIiwRHSsJdev9vG_SBItuUCUR2nT_Q-YD6kOKzd2JBltyN1aDcUEIqCBQYJjU3lPZ54909my-r1SWpRYbRCwCa9PGV6nq7VOoKBNUWf7hV-eaoTr8zRfqBOXrmdXIyJYLT0QcqsJW_-MYaMiI65wUZv\",\n            \"createdDateTime\": \"2019-12-07T07:22:34.467Z\",\n            \"cTag\": \"aYzoyNzQ3MUJGMDgzRDE3RDgwITEwNzIuMTAyNw\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCExMDcyLjY4\",\n            \"id\": \"27471BF083D17D80!1072\",\n            \"lastModifiedDateTime\": \"2024-06-21T20:38:30.777Z\",\n            \"name\": \"Document 1.docx\",\n            \"size\": 11279,\n            \"webUrl\": \"https://1drv.ms/w/s!AIB90YPwG0cniDA\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"application\": {\n                    \"displayName\": \"tasks.office.com\",\n                    \"id\": \"47086\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"file\": {\n                \"mimeType\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\",\n                \"hashes\": {\n                    \"quickXorHash\": \"M6GSdk6IVBYqY52XgdwTTYcJ/08=\",\n                    \"sha1Hash\": \"A92B09D94D10ECE9FD4B9EAC693D874E4E71F858\"\n                }\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2019-12-07T07:22:34.466Z\",\n                \"lastModifiedDateTime\": \"2019-12-07T07:24:43.516Z\"\n            },\n            \"shared\": {\n                \"scope\": \"users\",\n                \"sharedDateTime\": \"2024-06-21T20:38:30.7635307Z\",\n                \"owner\": {\n                    \"user\": {\n                        \"displayName\": \"Hari prasath M\",\n                        \"id\": \"27471bf083d17d80\"\n                    }\n                }\n            }\n        },\n        {\n            \"@microsoft.graph.downloadUrl\": \"https://n3ssmw.bl.files.1drv.com/y4mcWtnrX3zSOUx36SuDnwhpZoTziM1GJkTm0rmADIkYh6a8udHnHkBmWmFgObei6gQjhwPMorV245xvEOdihBCudno42JpOlkHp_pb9VHnYrmidA-fD0NkFMIwbPpTrbrqqua41extQxomVkn5Lar8pK0c36UhWnH_qzqgvQIv75pMGxOI20KRGuiDbvvphK9w\",\n            \"createdDateTime\": \"2016-10-12T13:56:10.86Z\",\n            \"cTag\": \"aYzoyNzQ3MUJGMDgzRDE3RDgwITE2OS4xNTE3\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCExNjkuMTg\",\n            \"id\": \"27471BF083D17D80!169\",\n            \"lastModifiedDateTime\": \"2016-10-13T13:47:42.57Z\",\n            \"name\": \"Document.docx\",\n            \"size\": 621721,\n            \"webUrl\": \"https://1drv.ms/w/s!AIB90YPwG0cngSk\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"file\": {\n                \"mimeType\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\",\n                \"hashes\": {\n                    \"crc32Hash\": \"AF3057DA\",\n                    \"quickXorHash\": \"jK4pRLGwmUliXoEGTp5ignFy59c=\",\n                    \"sha1Hash\": \"887DDA559278A318D79F08D723786DDCD7984B2F\"\n                }\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2016-10-12T13:56:10.86Z\",\n                \"lastModifiedDateTime\": \"2016-10-13T13:26:44.803Z\"\n            }\n        },\n        {\n            \"@microsoft.graph.downloadUrl\": \"https://n3ssmw.bl.files.1drv.com/y4m21vxlvvUt3W7R5w3N1t27sIoszRbJknikLjK9-NjSuG1kMy5DOUtoUOiR56kXXtOVsP_q43O5fAYWxlEv4m4o6d-CJBBqSvDNdjSuNGAzEqeCW4M0e2KZ3FkFsdhn0JnuqEWq51VjL62fiJMGcIkeumE27qH4kgj6T0HO-qMZEUt6sHAMl_ycerf_Q-a8idkezO1UmJAMDyq2im46aaapQYTg4Qi3VHZ1skS04Tygzz8oZuG0MGuZFFyLNNVp_ub\",\n            \"createdDateTime\": \"2016-09-03T06:39:06.157Z\",\n            \"cTag\": \"aYzoyNzQ3MUJGMDgzRDE3RDgwITEwNC4yNTc\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCExMDQuMw\",\n            \"id\": \"27471BF083D17D80!104\",\n            \"lastModifiedDateTime\": \"2016-09-03T06:39:13.94Z\",\n            \"name\": \"Getting started with OneDrive.pdf\",\n            \"size\": 970331,\n            \"webUrl\": \"https://1drv.ms/b/s!AIB90YPwG0cnaA\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"device\": {\n                    \"id\": \"18bffed993a32c\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"device\": {\n                    \"id\": \"18bffed993a32c\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"file\": {\n                \"mimeType\": \"application/pdf\",\n                \"hashes\": {\n                    \"quickXorHash\": \"FORp3wE4a044UkTGNxMdbxx2KfI=\",\n                    \"sha1Hash\": \"5394B87D1D04613930111280F0839ACBF7EC511E\",\n                    \"sha256Hash\": \"\"\n                }\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2016-09-03T06:39:06.156Z\",\n                \"lastModifiedDateTime\": \"2016-09-03T06:39:06.157Z\"\n            }\n        },\n        {\n            \"@microsoft.graph.downloadUrl\": \"https://n3ssmw.bn.files.1drv.com/y4mNPyxQnKRuzggQvAqeRIbBGqpR3gvmFXTlvz_88POzWtiuMUuCAJ0FtKVMq2s54eXtL1G8Vi4cXA7y6yLsDTE-W2l-meipbZ3XdIldKgYerCcyiD7VtVLdjAWqSlWQypGVp0SYn-ra7kKU7iByXIsVS-kCt61QKljFV6rqbosyDlN6oGxSpkzw10S-mIvW-k-VNbE_AxBe_7bxXe_U2PrnTNO1eL4d9J_Pz0V2XyJIuvfAoHlaUHHGYoONuoeuVvD\",\n            \"createdDateTime\": \"2019-10-22T10:25:37.68Z\",\n            \"cTag\": \"aYzoyNzQ3MUJGMDgzRDE3RDgwITkwNS4yNTc\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCE5MDUuNA\",\n            \"id\": \"27471BF083D17D80!905\",\n            \"lastModifiedDateTime\": \"2019-10-22T12:46:55.557Z\",\n            \"name\": \"HSIC_sem_report_pvln2 (1).doc\",\n            \"size\": 92160,\n            \"webUrl\": \"https://1drv.ms/w/s!AIB90YPwG0cnhwk\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"application\": {\n                    \"displayName\": \"tasks.office.com\",\n                    \"id\": \"47086\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"application\": {\n                    \"displayName\": \"tasks.office.com\",\n                    \"id\": \"47086\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"file\": {\n                \"mimeType\": \"application/msword\",\n                \"hashes\": {\n                    \"quickXorHash\": \"fJzJk3WJXLP5Arw+uOVlxwmvWa0=\",\n                    \"sha1Hash\": \"B0E7074D3F6CF354C115F600ADB244374ABF059D\",\n                    \"sha256Hash\": \"4270498FBF52098B3CB6FAE12ABB23C1672D4B63672853385E2681905D0BADF9\"\n                }\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2019-10-22T10:25:37.68Z\",\n                \"lastModifiedDateTime\": \"2019-10-22T10:25:37.68Z\"\n            }\n        },\n        {\n            \"@microsoft.graph.downloadUrl\": \"https://n3ssmw.bn.files.1drv.com/y4mccU5agW4tphGTk5fIrUP6Eqzg0dgsQqaVEaLQLtlKllWqL_yeQ335OH6OXZzmO4VVIH08jUQXvvHhDcBHT5r7bqtdIlBIaMZmGgN4qr1tUnrhpGT5UJtXY-eqeciXYgQcvPXYNaKMJOa7E-iJOx4exIW_LksOqfeAQfl6ny05gRaN10qCG3XlaBG9ELoXyfdQThYW_ElS33uuYhAPZq-2IpabHwdHOvjH8pRKQ8vactwcrwR0tXdHMkD6koz5qq0\",\n            \"createdDateTime\": \"2019-10-21T04:47:27.543Z\",\n            \"cTag\": \"aYzoyNzQ3MUJGMDgzRDE3RDgwITkwNC4yNTc\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCE5MDQuNA\",\n            \"id\": \"27471BF083D17D80!904\",\n            \"lastModifiedDateTime\": \"2019-10-21T06:01:21.687Z\",\n            \"name\": \"ReportDoc.docx\",\n            \"size\": 468349,\n            \"webUrl\": \"https://1drv.ms/w/s!AIB90YPwG0cnhwg\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"application\": {\n                    \"displayName\": \"tasks.office.com\",\n                    \"id\": \"47086\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"application\": {\n                    \"displayName\": \"tasks.office.com\",\n                    \"id\": \"47086\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"file\": {\n                \"mimeType\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\",\n                \"hashes\": {\n                    \"quickXorHash\": \"tPPpXNllWnUYoxi+B2YJE6/ihfI=\",\n                    \"sha1Hash\": \"0865C35E13CBFAF265EEAEA7AC6C0756389B9DD4\",\n                    \"sha256Hash\": \"C501CE1B267AEFD2BD92BEEEE8B989645E05D5A0956033F2BD4AB04ABCA40526\"\n                }\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2019-10-21T04:47:27.543Z\",\n                \"lastModifiedDateTime\": \"2019-10-21T04:47:27.543Z\"\n            }\n        },\n        {\n            \"@microsoft.graph.downloadUrl\": \"https://n3ssmw.bl.files.1drv.com/y4mYftluk4I5I36HkTfzU11GgQ30r2Rb3g0jtEgXcWnC4P-Ud-I-KPznaCIeOhyG9pDxcnRrgHbmuzbougFqCDHL6Xtb0Ru2S_dk4PJNBJoXDzL0TY3Q5sizylRhSzcGNKaYYW6_qH-nkL6hluEmwQRgSUbJqUl6-OZrF3PClQb7tfrizbJ4kB6RDmL3vBbGLQv\",\n            \"createdDateTime\": \"2024-01-07T14:06:25.247Z\",\n            \"cTag\": \"aYzoyNzQ3MUJGMDgzRDE3RDgwITI2NzcuNDQ3\",\n            \"eTag\": \"aMjc0NzFCRjA4M0QxN0Q4MCEyNjc3LjEw\",\n            \"id\": \"27471BF083D17D80!2677\",\n            \"lastModifiedDateTime\": \"2024-01-07T14:10:35.957Z\",\n            \"name\": \"Sbi Loan Sanction Letter.docx\",\n            \"size\": 21556,\n            \"webUrl\": \"https://1drv.ms/w/s!AIB90YPwG0cnlHU\",\n            \"reactions\": {\n                \"commentCount\": 0\n            },\n            \"createdBy\": {\n                \"application\": {\n                    \"displayName\": \"OfficeHome\",\n                    \"id\": \"4040979a\"\n                },\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"lastModifiedBy\": {\n                \"user\": {\n                    \"displayName\": \"Hari prasath M\",\n                    \"id\": \"27471bf083d17d80\"\n                }\n            },\n            \"parentReference\": {\n                \"driveId\": \"27471bf083d17d80\",\n                \"driveType\": \"personal\",\n                \"id\": \"27471BF083D17D80!103\",\n                \"path\": \"/drive/root:\"\n            },\n            \"file\": {\n                \"mimeType\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\",\n                \"hashes\": {\n                    \"quickXorHash\": \"uvq7CUEE9vntffKpJAAVDGatW1o=\",\n                    \"sha1Hash\": \"F905C03F12BD74ED9A22FE933D70A6F5B9D3533A\",\n                    \"sha256Hash\": \"EFE53DDCBAE2CD5AD9343C7638CA7926895DB859ABE465220D57F9F1FF5BC954\"\n                }\n            },\n            \"fileSystemInfo\": {\n                \"createdDateTime\": \"2024-01-07T14:06:25.246Z\",\n                \"lastModifiedDateTime\": \"2024-01-07T14:10:28.51Z\"\n            }\n        }\n    ],\n    \"count\": 13\n}"
+				}
+			]
+		},
+		{
+			"name": "Download file",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{IP}}/download/27471BF023D17D80!2741",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"download",
+						"27471BF023D17D80!2741"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "download file",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{IP}}/download/27471BF083D17D80!2741",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"download",
+								"27471BF083D17D80!2741"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "318"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13e-V09QdfhqQN1fJZBBHohGI6UDN60\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jun 2024 12:51:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"27471BF083D17D80!2741\",\n    \"downloadUrl\": \"https://n3ssmw.bl.files.1drv.com/y4m3M0YkV7_XnwRr_44dLMcncoS_xv1hHkaVAj73OwtCNhesEmov-OVwuM9m_55wa9XniBMeRijqFVG2PppU0cDxnNZlvD5gT-eHX-bTMZU_IlYtd11eCtD2Y8KKQ6z3cwYIfhnuisBZTEOnoSNvjfGdEcaEV5isH-6dy0JvBvHrMYM7_dWHpqe0OMrwzieudRKalAr76snH2NY3nxKyzB9Duqlver8Lj4edDn5HGnchz4\"\n}"
+				},
+				{
+					"name": "Not fond",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{IP}}/download/27471BF023D17D80!2741",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"download",
+								"27471BF023D17D80!2741"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44-PJ5hLhH5l1tBboio3VQ3xGplDM4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jun 2024 12:52:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"itemNotFound\",\n    \"message\": \"Item does not exist\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
